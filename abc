@@ -1,1 +1,39 @@
-Great! work done this file is pushed from git to here i mean git hub
+echo Great! work done this file is pushed from git to here i mean git hub
+import random
+
+class LudoGame:
+    def __init__(self):
+        self.players = ['Player 1', 'Player 2', 'Player 3', 'Player 4']
+        self.board = {'Player 1': [], 'Player 2': [], 'Player 3': [], 'Player 4': []}
+        self.winning_positions = { 'Player 1': 0, 'Player 2': 0, 'Player 3': 0, 'Player 4': 0}
+        self.dice = [1, 2, 3, 4, 5, 6]
+
+    def roll_dice(self):
+        return random.choice(self.dice)
+
+    def move_piece(self, player):
+        roll = self.roll_dice()
+        print(f"{player} rolled a {roll}")
+        # Logic for moving pieces on the board goes here
+        # Update the position of the player's piece based on the dice roll
+        # Check for winning conditions and update winning_positions accordingly
+
+    def play(self):
+        while not self.is_winner():
+            for player in self.players:
+                self.move_piece(player)
+        print(f"{self.get_winner()} won the game!")
+
+    def is_winner(self):
+        # Logic to check if any player has won the game
+        # Return True if a player has won, else False
+        pass
+
+    def get_winner(self):
+        # Logic to determine and return the winner of the game
+        pass
+
+# Usage
+if __name__ == "__main__":
+    ludo = LudoGame()
+    ludo.play()
